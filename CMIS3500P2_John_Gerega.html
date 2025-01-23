@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<!--this is the html code for project 2-->
+	<title> HTML Calculator </title>
+	</head>
+		<!--upon the page loading, the reset() function is called to initialize X and Y to 20 and 4 respectively-->
+		<body onload = "reset()">
+		<!--All input fields are initialized here, when X and Y are changed the performfunctions method is invoked-->
+		<p> X: <input type ="number" id = "X" name="X" onchange = "performfunctions()"></p>
+		<p> Y <input type ="number" id = "Y" name="Y" onchange = "performfunctions()"> </p>
+		<p>X+Y:<input type ="number" id = "adding" name="adding"> </p>
+		<p> X-Y:<input type ="number" id = "subtracting" name="subtracting"> </p>
+		<p> X*Y: <input type ="number" id = "multiplying" name="multiplying"> </p>
+		<p> X/Y: <input type ="text" id = "division" name="division"> </p>
+		<!--When the initialize button is clicked, the reset function is called again to reset to initial values-->
+		<p> <input type = "button", value = "Initialize" onclick = "reset()"> </p>
+
+		
+		<script>
+		<!--This is the javascript code for the Calculator-->
+		<!--Global variables X and Y set to 20 and 4 to start-->
+		var X = 20;
+		var Y = 4;
+		<!-- performfunctions definition-->
+		function performfunctions()
+		{
+			//X and Y extracted from their fields and turned into numbers using parseInt (without this, the addition is an addition of strings)
+			X = parseInt(document.getElementById("X").value);
+			Y = parseInt(document.getElementById("Y").value);
+			//With X and Y, all operations are performed and the value for each field is set to their result
+			document.getElementById("adding").value = X + Y;
+			document.getElementById("subtracting").value = X - Y;
+			document.getElementById("multiplying").value = X * Y;
+			//Though not required, I added a check if Y is 0 as division by 0 is impossible
+			if (Y != 0)
+				document.getElementById("division").value = X / Y;
+			else
+				document.getElementById("division").value = "Error: cannot divide by 0";
+		}
+		//Reset function definition
+		function reset()
+		{
+			//X and Y reset to 20 and 4, and then the X and Y fields are set to these values
+			X = 20;
+			Y = 4;
+			document.getElementById("X").value = X;
+			document.getElementById("Y").value = Y;
+			//a call to performfunctions to reset the result fields
+			performfunctions()
+		}
+		</script>
+		
+		
+		</body>
+</html>
+	

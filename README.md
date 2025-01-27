@@ -21,5 +21,5 @@ Skills learned in this program:
   - sets elements to the various operations based on the name of the HTML element
   - Checks if y is 0 to prevent an error before setting the division value
 -  reset()
-  - reset X and Y to 20 and 4 respectively and set the X and Y field to those values
-  - call performfunctions() to reset result fields     
+    - reset X and Y to 20 and 4 respectively and set the X and Y field to those values
+    - call performfunctions() to reset result fields     
